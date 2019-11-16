@@ -1,0 +1,72 @@
+{
+    "M": null,
+    "P": null,
+    "adapter": null,
+    "adapter2": null,
+    "assume_sorted": null,
+    "bed_file": {
+        "class": "File",
+        "path": "/work/access/production/resources/msk-access/current/regions_of_interest/current/MSK-ACCESS-v1_0-probe-A.sorted.bed"
+    },
+    "bqsr_read_filter": null,
+    "collapsing_aln_output_file_name": "",
+    "collapsing_picard_output_file_name": "",
+    "consensus_sequence": null,
+    "contig_anchor": null,
+    "create_bam_index": null,
+    "fastq1": [
+        {
+            "class": "File",
+            "path": ""
+        }
+    ],
+    "fastq2": [
+        {
+            "class": "File",
+            "path": ""
+        }
+    ],
+    "ignore_bad_assembly": null,
+    "key": null,
+    "known_sites_1": {
+        "class": "File",
+        "path": "/work/access/production/resources/dbSNP/current/dbsnp_137_14_16.b37.vcf"
+    },
+    "known_sites_2": {
+        "class": "File",
+        "path": "/work/access/production/resources/mills_and_1000g/current/Mills_and_1000G_gold_standard-14_16.indels.b37.vcf"
+    },
+    "length": null,
+    "maximum_average_depth": null,
+    "maximum_mixmatch_rate": null,
+    "min_base_quality": null,
+    "min_consensus_percent": null,
+    "min_map_quality": null,
+    "mismatches": null,
+    "number_of_threads": null,
+    "option_bedgraph": null,
+    "output_name_collapsed_gzip_R1": "",
+    "output_name_collapsed_gzip_R2": "",
+    "quality": null,
+    "read_group_identifier": "",
+    "read_group_library": 1,
+    "read_group_platform_unit": "",
+    "read_group_sample_name": "",
+    "read_group_sequencing_platform": "",
+    "read_group_sequnecing_center": "",
+    "reference": {
+        "class": "File",
+        "path": "/work/access/production/resources/reference/current/Homo_sapiens_assembly19.fasta"
+    },
+    "scoring_gap_alignments": null,
+    "soft_clip_contig": null,
+    "sort_first_pass_output_file_name": "",
+    "sort_order": "coordinate",
+    "standard_aln_output_file_name": null,
+    "standard_picard_addrg_output_filename": null,
+    "stringency": null,
+    "trim_galore_number_of_threads": null,
+    "validation_stringency": null,
+    "window_size": null,
+    "wobble": null
+}
