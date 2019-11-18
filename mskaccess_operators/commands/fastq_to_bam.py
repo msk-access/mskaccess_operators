@@ -3,6 +3,7 @@ import sys
 import logging
 import time
 import json
+import pathlib
 import mskaccess_operators.utilities as utils
 try:
     import click
@@ -29,18 +30,26 @@ Created on November 15, 2019
 Description: console script for generating inputs for fastq_to_bam workflow
 @author: Ronak H Shah
 """
-
+BASE_DIR = pathlib.Path('__file__').resolve().parent
 # Making logging possible
 logger = logging.getLogger("mskaccess_operators")
 click_log.basic_config(logger)
 click_log.ColorFormatter.colors["info"] = dict(fg="green")
 @click.group()
-@click.option('-m', '--meta-information-json', required=False, type=click.Path(exists=True))
-@click.option('-r', '--reference-json', required=False, default='../reference-json/fastq_to_bam_job.json', type=click.Path(exists=True))
-@click_log.simple_verbosity_option(logger)
+
+
 def cli():
+    """ Sub-commands for fastq_to_bam input generation"""
+    pass
+
+@cli.command()
+@click.option('-m', '--meta-information-json', type=click.Path(exists=True))
+@click.option('-r', '--reference-json', default=BASE_DIR.joinpath("reference-json", "fastq_to_bam_job.json"), type=click.Path(exists=True))
+@click_log.simple_verbosity_option(logger)
+
+def generate(meta_information_json,reference_json):
     """Command that helps to generate inputs json for fastq_to_bam workflow for MSK-ACCESS."""
-    logger_output = os.path.join("mskaccess_operators.log")
+    logger_output = pathlib.Path.cwd().joinpath("mskaccess_operators.log")
     fh = logging.FileHandler(logger_output)
     formatter = logging.Formatter(
         fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -53,13 +62,12 @@ def cli():
     logger.info("==================================================")
     t1_start = time.perf_counter()
     t2_start = time.process_time()
-    run()
+    print(meta_information_json, "\n")
+    print(reference_json, "\n")
     t1_stop = time.perf_counter()
     t2_stop = time.process_time()
     logger.info("--------------------------------------------------")
     logger.info("Elapsed time: %.1f [min]" % ((t1_stop - t1_start) / 60))
     logger.info("CPU process time: %.1f [min]" % ((t2_stop - t2_start) / 60))
     logger.info("--------------------------------------------------")
-
-def run():
-    pass                                                                                                                                                                                    
+    return                                                                                                                                                                                   

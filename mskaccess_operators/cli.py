@@ -66,7 +66,7 @@ class MyCLI(click.MultiCommand):
 
 
 @click.command(cls=MyCLI)
-@click.version_option(version=__version__, prog_name="mskaccess_operators")
+@click.version_option(None, "-v", "--version", message="%(version)s", prog_name="mskaccess_operators")
 def main(args=None):
     """Console script for mskaccess_operators."""
     pass
