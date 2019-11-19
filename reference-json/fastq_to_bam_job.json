@@ -49,7 +49,7 @@
     "output_name_collapsed_gzip_R2": "",
     "quality": null,
     "read_group_identifier": "",
-    "read_group_library": 1,
+    "read_group_library": "",
     "read_group_platform_unit": "",
     "read_group_sample_name": "",
     "read_group_sequencing_platform": "",
